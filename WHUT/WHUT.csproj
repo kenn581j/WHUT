@@ -99,8 +99,5 @@
     <Folder Include="Persistence\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="TextFileKennethy.txt" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
