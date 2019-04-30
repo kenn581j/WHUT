@@ -16,7 +16,6 @@ namespace WHUT.ViewModel
         {
             tournament = new Tournament(name, location, date);
             tournamentRegistry.SaveTournament(tournament);
-
         }
     }
 }

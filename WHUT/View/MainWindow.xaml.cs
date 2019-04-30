@@ -24,10 +24,7 @@ namespace WHUT
         {
             InitializeComponent();
         }
+        
 
-        private void NewTournament_Click(object sender, RoutedEventArgs e)
-        {
-            ContentFrame.NavigationService.Navigate(new View.Content.NewTournament());
-        }
     }
 }
