@@ -18,4 +18,10 @@ namespace WHUT.Model
             Location = location;
             Date = date;
         }
+
+        public override string ToString()
+        {
+            return Name + Location + Date;
+        }
     }
+}
