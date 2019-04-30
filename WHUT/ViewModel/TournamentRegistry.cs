@@ -12,17 +12,17 @@ namespace WHUT.ViewModel
     {
         public void SaveTournament(Tournament tournament)
         {
-            XmlWriter saveTournament = XmlWriter.Create(tournament + ".xml");
-            
-            saveTournament.WriteStartDocument();
-            saveTournament.WriteStartElement("Tournaments");
+            XmlWriter xmlWriter = XmlWriter.Create(tournament.Name + ".xml");
 
-            saveTournament.WriteStartElement(tournament.Name);
-            saveTournament.WriteAttributeString("Date", tournament.Date.ToString(), "Location");
-            saveTournament.WriteString(tournament.Location);
-            saveTournament.WriteEndElement();
+            xmlWriter.WriteStartDocument();
+            xmlWriter.WriteStartElement("Tournament");
 
-            saveTournament.Close();
+            xmlWriter.WriteStartElement(tournament.Name);
+            xmlWriter.WriteAttributeString("Date", tournament.Date.ToString(), "Location");
+            xmlWriter.WriteString(tournament.Location);
+            xmlWriter.WriteEndElement();
+
+            xmlWriter.Close();
         }
     }
 }
