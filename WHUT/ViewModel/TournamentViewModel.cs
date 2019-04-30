@@ -10,7 +10,7 @@ namespace WHUT.ViewModel
     public class TournamentViewModel
     {
         private Tournament tournament;
-        private TournamentRegistry tournamentRegistry;
+        private TournamentRegistry tournamentRegistry = new TournamentRegistry();
 
         private void NewTournament(string name, string location, DateTime date)
         {
