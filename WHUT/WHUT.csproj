@@ -62,6 +62,9 @@
     <Compile Include="Domain\Tournament.cs" />
     <Compile Include="Business\TournamentRegistry.cs" />
     <Compile Include="Business\TournamentRepo.cs" />
+    <Compile Include="UI\Content\FrontPage.xaml.cs">
+      <DependentUpon>FrontPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Content\NewTournamentPage.xaml.cs">
       <DependentUpon>NewTournamentPage.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
     <Folder Include="Persistence\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="UI\Content\FrontPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Content\NewTournamentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

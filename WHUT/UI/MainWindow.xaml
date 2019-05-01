@@ -21,6 +21,7 @@
         </StackPanel>
 
         <Frame Name="ContentFrame" Grid.Column="1" Grid.Row="1"
-                   NavigationUIVisibility="Hidden"/>
+               Margin="10, 10, 10, 10" 
+               NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
