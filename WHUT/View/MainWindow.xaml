@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
         
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="10, 10, 10, 10">
+            
+        </StackPanel>
+
+        <Frame Name="ContentFrame" Grid.Column="1" Grid.Row="1"
+                   NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

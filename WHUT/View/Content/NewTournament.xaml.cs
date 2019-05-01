@@ -13,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WHUT
+namespace WHUT.View.Content
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for NewTournament.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NewTournament : Page
     {
-        public MainWindow()
+        public NewTournament()
         {
             InitializeComponent();
         }
-        
-
     }
 }
