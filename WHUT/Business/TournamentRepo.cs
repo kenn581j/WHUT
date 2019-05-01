@@ -7,7 +7,7 @@ using WHUT.Domain;
 
 namespace WHUT.Business
 {
-    public class TournamentViewModel
+    public class TournamentRepo
     {
         private Tournament tournament;
         private TournamentRegistry tournamentRegistry = new TournamentRegistry();
