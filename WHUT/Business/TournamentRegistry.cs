@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using WHUT.Model;
+using WHUT.Domain;
 
-namespace WHUT.ViewModel
+namespace WHUT.Business
 {
     public class TournamentRegistry
     {

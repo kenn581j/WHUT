@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WHUT.Model;
+using WHUT.Domain;
 
-namespace WHUT.ViewModel
+namespace WHUT.Business
 {
-    public class TournamentViewModel
+    public class TournamentRepo
     {
         private Tournament tournament;
         private TournamentRegistry tournamentRegistry = new TournamentRegistry();
