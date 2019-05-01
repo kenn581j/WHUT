@@ -55,10 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="View\Content\NewTournament.xaml.cs">
-      <DependentUpon>NewTournament.xaml</DependentUpon>
-    </Compile>
-    <Page Include="View\MainWindow.xaml">
+    <Page Include="UI\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -66,17 +63,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Tournament.cs" />
-    <Compile Include="ViewModel\TournamentRegistry.cs" />
-    <Compile Include="ViewModel\TournamentViewModel.cs" />
-    <Compile Include="View\MainWindow.xaml.cs">
+    <Compile Include="Domain\Tournament.cs" />
+    <Compile Include="Business\TournamentRegistry.cs" />
+    <Compile Include="Business\TournamentViewModel.cs" />
+    <Compile Include="UI\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\Content\NewTournament.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
