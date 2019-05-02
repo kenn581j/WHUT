@@ -12,7 +12,7 @@ namespace WHUT.Business
         private Tournament tournament;
         private TournamentRegistry tournamentRegistry = new TournamentRegistry();
 
-        private void NewTournament(string name, string location, DateTime date)
+        public void NewTournament(string name, string location, DateTime date)
         {
             tournament = new Tournament(name, location, date);
             tournamentRegistry.SaveTournament(tournament);
