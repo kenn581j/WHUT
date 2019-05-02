@@ -10,24 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WHUT.UI
+namespace WHUT.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for NewTournament.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NewTournament : UserControl
     {
-        public MainWindow()
+        public NewTournament()
         {
             InitializeComponent();
-            ContentFrame.NavigationService.Navigate(new Content.FrontPage());
         }
 
-        private void NewTournament_Button_Click(object sender, RoutedEventArgs e)
+        private void NewTournamentButton_Click(object sender, RoutedEventArgs e)
         {
-            ContentFrame.NavigationService.Navigate(new Content.NewTournamentPage());
+                string message = Name;
+                MessageBox.Show(message);
         }
     }
 }
