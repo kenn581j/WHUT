@@ -17,7 +17,7 @@ namespace WHUT.Business
         public void RegisterPlayer(string name, string club, string warband)
         {
             Player player = new Player(name, club, warband);
-            playerRegistry.CreatePlayer(player);
+            playerRegistry.SavePlayer(player);
 
         }
 
