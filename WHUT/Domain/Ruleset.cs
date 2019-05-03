@@ -14,7 +14,7 @@ namespace WHUT.Domain
             //Remove PLayers who lost a match
             foreach(Player player in players)
             {
-                if(players.MatchesLost < 0)
+                if(players.Count < 0)
                 {
                     players.Remove(player);
                 }
@@ -29,7 +29,7 @@ namespace WHUT.Domain
             //Move all players with 1 loss to lower bracket
             foreach(Player player in upperPlayers)
             {
-                if (player.MatchesLost < 0)
+                if (player.Losses < 0)
                 {
                     lowerPlayers.Add(player);
                     upperPlayers.Remove(player);
@@ -38,7 +38,7 @@ namespace WHUT.Domain
             //Remove all players with 2 losses in lower bracket
             foreach(Player player in lowerPlayers)
             {
-                if (player.MatchesLost < 1)
+                if (player.Losses < 1)
                 {
                     lowerPlayers.Remove(player);
                 }

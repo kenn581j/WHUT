@@ -60,10 +60,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domain\Player.cs" />
     <Compile Include="Domain\Ruleset.cs" />
     <Compile Include="Domain\Tournament.cs" />
-    <Compile Include="Business\TournamentRegistry.cs" />
     <Compile Include="Business\TournamentRepo.cs" />
+    <Compile Include="Persistence\PlayerRegistry.cs" />
+    <Compile Include="Persistence\TournamentRegistry.cs" />
     <Compile Include="UI\Content\FrontPage.xaml.cs">
       <DependentUpon>FrontPage.xaml</DependentUpon>
     </Compile>
@@ -100,9 +102,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Persistence\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="UI\Content\FrontPage.xaml">
       <SubType>Designer</SubType>
