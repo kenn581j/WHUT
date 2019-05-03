@@ -9,7 +9,7 @@ namespace WHUT.Domain
     public class Ruleset
     {
 
-        public List<Player> SingleElimanation(List<Player> players)
+        public List<Player> SingleElimination(List<Player> players)
         {
             //Remove PLayers who lost a match
             foreach(Player player in players)
@@ -24,7 +24,7 @@ namespace WHUT.Domain
             return Shuffle(players);
         }
 
-        public (List<Player>, List<Player>) DoubleElimanation(List<Player> upperPlayers, List<Player> lowerPlayers)
+        public (List<Player>, List<Player>) DoubleElimination(List<Player> upperPlayers, List<Player> lowerPlayers)
         {           
             //Move all players with 1 loss to lower bracket
             foreach(Player player in upperPlayers)
