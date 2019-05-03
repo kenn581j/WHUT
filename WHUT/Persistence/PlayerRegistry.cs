@@ -19,9 +19,9 @@ namespace WHUT.Persistence
             xmlWriter.WriteStartDocument();
             xmlWriter.WriteStartElement("Player");
           
-            xmlWriter.WriteStartElement(player.Name);
-            xmlWriter.WriteString(player.Club);
-            xmlWriter.WriteString(player.Warband);
+            xmlWriter.WriteStartElement("Player Name", player.Name);
+            xmlWriter.WriteElementString("Club", player.Club);
+            xmlWriter.WriteElementString("Warband",player.Warband);
 
             xmlWriter.WriteEndElement();
             xmlWriter.Close();

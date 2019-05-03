@@ -62,9 +62,9 @@
     <Compile Include="Business\PlayerRepo.cs" />
     <Compile Include="Domain\Player.cs" />
     <Compile Include="Domain\Tournament.cs" />
-    <Compile Include="Business\TournamentRegistry.cs" />
     <Compile Include="Business\TournamentRepo.cs" />
     <Compile Include="Persistence\PlayerRegistry.cs" />
+    <Compile Include="Persistence\TournamentRegistry.cs" />
     <Compile Include="UI\Content\CreatePlayer.xaml.cs">
       <DependentUpon>CreatePlayer.xaml</DependentUpon>
     </Compile>
