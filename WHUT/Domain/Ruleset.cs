@@ -11,7 +11,7 @@ namespace WHUT.Domain
 
         public List<Player> SingleElimination(List<Player> players)
         {
-            //Remove PLayers who lost a match
+            //Remove Players who lost a match
             foreach(Player player in players)
             {
                 if(player.Losses > 0)
