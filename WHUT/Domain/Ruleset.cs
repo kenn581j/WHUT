@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.V
 
 namespace WHUT.Domain
 {
@@ -15,7 +14,7 @@ namespace WHUT.Domain
             //Remove PLayers who lost a match
             foreach(Player player in players)
             {
-                if(players.MatchLost < 0)
+                if(players.MatchesLost < 0)
                 {
                     players.Remove(player);
                 }
@@ -25,10 +24,26 @@ namespace WHUT.Domain
             return Shuffle(players);
         }
 
-        public (List<Player>, List<PLayer>) DoubleElimanation(List<Player> players)
-        {
-            List<PLayer> upperPlayers = new List<PLayer>();
-            List<PLayer> lowerPlayers = new List<PLayer>();
+        public (List<Player>, List<Player>) DoubleElimanation(List<Player> upperPlayers, List<Player> lowerPlayers)
+        {           
+            //Move all players with 1 loss to lower bracket
+            foreach(Player player in upperPlayers)
+            {
+                if (player.MatchesLost < 0)
+                {
+                    lowerPlayers.Add(player);
+                    upperPlayers.Remove(player);
+                }
+            }
+            //Remove all players with 2 losses in lower bracket
+            foreach(Player player in lowerPlayers)
+            {
+                if (player.MatchesLost < 1)
+                {
+                    lowerPlayers.Remove(player);
+                }
+            }
+
             return (upperPlayers, lowerPlayers);
         }
 
@@ -51,6 +66,7 @@ namespace WHUT.Domain
             {
                 int nextIndex = rand.Next(players.Count + 1);
                 playersNewOrder.Add(players[nextIndex]);
+                players.RemoveAt(nextIndex);
             }
 
             return playersNewOrder;
