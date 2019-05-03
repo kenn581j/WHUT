@@ -29,5 +29,10 @@ namespace WHUT.UI
         {
             ContentFrame.NavigationService.Navigate(new Content.NewTournamentPage());
         }
+
+        private void CreatePlayer_Butoon_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.NavigationService.Navigate(new Content.CreatePlayer());
+        }
     }
 }

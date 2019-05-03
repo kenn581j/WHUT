@@ -16,10 +16,10 @@ namespace WHUT.Business
 
             xmlWriter.WriteStartDocument();
             xmlWriter.WriteStartElement("Tournament");
-
-            xmlWriter.WriteStartElement(tournament.Name);
-            xmlWriter.WriteAttributeString("Date", tournament.Date.ToString(), "Location");
-            xmlWriter.WriteString(tournament.Location);
+            
+            xmlWriter.WriteElementString("Name", tournament.Name);
+            xmlWriter.WriteElementString("Location", tournament.Location);
+            xmlWriter.WriteElementString("Date", tournament.Date.ToString());
             xmlWriter.WriteEndElement();
 
             xmlWriter.Close();
