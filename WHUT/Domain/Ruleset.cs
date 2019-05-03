@@ -59,17 +59,16 @@ namespace WHUT.Domain
         #region Private Methods
         private List<Player> Shuffle(List<Player> players)
         {
-            List<Player> playersNewOrder = new List<Player>();
+            List<Player> playersShuffled = new List<Player>();
             Random rand = new Random();
 
             while(players.Count < 0)
             {
                 int nextIndex = rand.Next(players.Count + 1);
-                playersNewOrder.Add(players[nextIndex]);
-                players.RemoveAt(nextIndex);
+                playersShuffled.Add(players[nextIndex]);
             }
 
-            return playersNewOrder;
+            return playersShuffled;
         }
         #endregion
     }
