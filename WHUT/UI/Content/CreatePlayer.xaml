@@ -9,9 +9,9 @@
       Title="CreatePlayer">
 
     <Grid>
-        <TextBox Name="Name" HorizontalAlignment="Left" Height="23" Margin="10,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235"/>
-        <TextBox Name="Club" HorizontalAlignment="Left" Height="23" Margin="10,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235"/>
-        <TextBox Name="Warband" HorizontalAlignment="Left" Height="23" Margin="10,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235"/>
+        <TextBox Name="playerName" HorizontalAlignment="Left" Height="23" Margin="10,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235"/>
+        <TextBox Name="playerClub" HorizontalAlignment="Left" Height="23" Margin="10,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235"/>
+        <TextBox Name="playerWarband" HorizontalAlignment="Left" Height="23" Margin="10,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235"/>
         <Button Name="Save" Content="Save" HorizontalAlignment="Left" Margin="83,175,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.65,0.285" Click="Save_Click"/>
         <Label Name="LabelName" Content="Name" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
         <Label Name="LabelClub" Content="Club" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>

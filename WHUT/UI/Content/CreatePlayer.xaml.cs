@@ -28,9 +28,17 @@ namespace WHUT.UI.Content
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            PlayerRepo playerRepository = new PlayerRepo();
-            playerRepository.RegisterPlayer(Name.Text, Club.Text, Warband.Text);
-            MessageBox.Show($"New player {Name.Text} has been created");
+            //try
+            //{
+                PlayerRepo playerRepository = new PlayerRepo();
+                playerRepository.RegisterPlayer(playerName.Text, playerClub.Text, playerWarband.Text);
+            MessageBox.Show($"New player: {playerName.Text}, has been created");
+
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Fejl");
+            //}
         }
     }
 }
