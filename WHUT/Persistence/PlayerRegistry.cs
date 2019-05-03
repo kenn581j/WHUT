@@ -24,7 +24,7 @@ namespace WHUT.Persistence
             xmlWriter.WriteElementString("Warband", player.Warband);
 
             xmlWriter.WriteEndElement();
-            xmlWriter.Close();
+            xmlWriter.Close(); 
 
         }
     }
