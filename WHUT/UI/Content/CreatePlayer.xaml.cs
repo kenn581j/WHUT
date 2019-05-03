@@ -28,8 +28,8 @@ namespace WHUT.UI.Content
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            PlayerRepo player = new PlayerRepo();
-
+            PlayerRepo playerRepository = new PlayerRepo();
+            playerRepository.RegisterPlayer(Name.Text, Club.Text, Warband.Text);
         }
     }
 }
