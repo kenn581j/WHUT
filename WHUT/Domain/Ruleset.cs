@@ -38,7 +38,7 @@ namespace WHUT.Domain
             //Remove all players with 2 losses in lower bracket
             foreach(Player player in lowerPlayers)
             {
-                if (player.Losses < 1)
+                if (player.Losses > 1)
                 {
                     lowerPlayers.Remove(player);
                 }
