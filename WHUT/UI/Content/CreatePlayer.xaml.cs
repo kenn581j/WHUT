@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WHUT.Business;
 
 namespace WHUT.UI.Content
 {
@@ -27,6 +28,7 @@ namespace WHUT.UI.Content
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            PlayerRepo player = new PlayerRepo();
 
         }
     }
