@@ -15,7 +15,7 @@ namespace WHUT.Domain
         public int Wins { get; set; }
         public int Losses { get; set; }
         public int TiebreakerLoss {get; set;}
-        public int TiebreakerGloryDiff {get; set;} 
+        public int TiebreakerGloryDiff {get; set;}
 
         public Player(string name, string club, string warband)
         {
