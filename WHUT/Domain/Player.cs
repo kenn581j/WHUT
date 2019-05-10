@@ -21,9 +21,21 @@ namespace WHUT.Domain
         {
             Name = name;
             Club = club;
-            Warband = warband; 
+            Warband = warband;
+
+        }
+
+        public Player(string name, string club, string warband, int score, int tieBreakerByLoss, int tieBreakerGloryDiff)
+        {
+            Name = name;
+            Club = club;
+            Warband = warband;
+            Score = score;
+            TiebreakerLoss = tieBreakerByLoss;
+            TiebreakerGloryDiff = tieBreakerGloryDiff;
   
         }
+        
 
         public override string ToString()
         {
