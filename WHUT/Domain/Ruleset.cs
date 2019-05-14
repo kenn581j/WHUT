@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace WHUT.Domain
 {
     public class Ruleset
-    {
-
+    {      
         public List<Player> SingleElimination(List<Player> players)
         {
             //Remove PLayers who lost a match
@@ -49,8 +48,18 @@ namespace WHUT.Domain
 
         public List<Player> Swiss(List<Player> players, int parringtype)
         {
-            return null;
+            if (CheckIfFirstRound(players))
+            {
+                players = Shuffle(players);
+            }
+            else
+            {
+                players = players.OrderByDescending(x => x.Score).ThenByDescending(x => x.TiebreakerLoss).ThenByDescending(x => x.TiebreakerGloryDiff).ToList(); // Sorting the list with LINQ methods to pair players according to Swiss rules
+            }
+
+            return players;
         }
+
         public List<Player> RoundRobin(List<Player> players)
         {
             return null;
