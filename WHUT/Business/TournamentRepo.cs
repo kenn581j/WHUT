@@ -44,5 +44,14 @@ namespace WHUT.Business
         }
         */
 
+       ////// SPØRG HANS ANGÅENDE FREMLÆGGELSE. 
+
+        public void RemoveParticipant(Player name)
+        {
+            if (participants.Contains(name))
+            {
+                participants.Remove(name);
+            }           
+        }
     }
 }
