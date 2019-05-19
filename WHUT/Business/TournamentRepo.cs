@@ -11,6 +11,7 @@ namespace WHUT.Business
     {
         private Tournament tournament;
         private TournamentRegistry tournamentRegistry = new TournamentRegistry();
+        private List<Round> rounds = new List<Round>();
 
         public void NewTournament(string name, string location, DateTime date)
         {
@@ -21,9 +22,7 @@ namespace WHUT.Business
         public void NewRound()
         {
             List<Player> participants = tournament.GetParticipants();
-
             Round newRound = new Round();
-
             int j = 0;
             for (int i = 0; i < participants.Count / 2; i++)
             {
@@ -31,6 +30,8 @@ namespace WHUT.Business
                 j++;
                 newRound.AddMatch(match);
             }
+
+            rounds.Add(newRound);
         }
     }
 }

@@ -8,10 +8,10 @@ namespace WHUT.Business
     {
         private List<Match> matches = new List<Match>();
 
-        public void AddMatch(Match match)
+        public List<Match> AddMatch(Match match)
         {
             matches.Add(match);
-
+            return matches;
         }
     }
 }

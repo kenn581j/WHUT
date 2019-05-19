@@ -8,6 +8,7 @@ namespace WHUT.Domain
 {
     public class Tournament
     {
+
         //Stub liste
         private List<Player> participants = new List<Player> {
                 new Player("Kenneth Mortensen", "Odense", "Zarbags's Gitz", 6, 0, 73),
