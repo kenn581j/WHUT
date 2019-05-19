@@ -11,7 +11,7 @@ namespace WHUT.Business
     {
         private Tournament tournament;
         private TournamentRegistry tournamentRegistry = new TournamentRegistry();
-        private List<Round> rounds = new List<Round>();
+        internal List<Round> rounds = new List<Round>();
 
         public void NewTournament(string name, string location, DateTime date)
         {

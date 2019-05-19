@@ -36,9 +36,9 @@ namespace WHUT.UI
         }
 
         //Hele NewRound navigationen skal senere flyttes over til en singleton tournament? 
-        private void StartNewRound_Butoon_Click(object sender, RoutedEventArgs e)
-        {
-            ContentFrame.NavigationService.Navigate(new Content.NewRound());
-        }
+        //private void StartNewRound_Butoon_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ContentFrame.NavigationService.Navigate(new Content.NewRound());
+        //}
     }
 }

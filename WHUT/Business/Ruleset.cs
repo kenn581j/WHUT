@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WHUT.Business;
 
 namespace WHUT.Domain
 {
@@ -78,6 +79,26 @@ namespace WHUT.Domain
             }
 
             return playersShuffled;
+        }
+
+        // Vi tæller antallet af objekter i listen rounds, for at finde ud af hvor langt vi er i turneringen.
+        // hvis 0 er turneringen slet ikke klar
+        // hvis 1 er turneringen klar
+        // hvis 2 er vi ikke længere i første runde
+        private bool CheckIfFirstRound(List<Player> players)
+        {
+            TournamentRepo tournementRepo = new TournamentRepo();
+            bool judgement;
+            if (tournementRepo.rounds.Count < 2)
+            {
+                judgement = false;
+            }
+            else
+            {
+                judgement = true;
+            }
+
+            return judgement;
         }
         #endregion
     }
