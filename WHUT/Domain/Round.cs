@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using WHUT.Domain;
+using WHUT.Business;
 
 namespace WHUT.Business
 {

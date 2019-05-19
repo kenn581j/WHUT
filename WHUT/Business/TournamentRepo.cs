@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WHUT.Domain;
+using WHUT.Business;
 
 namespace WHUT.Business
 {
@@ -11,7 +11,7 @@ namespace WHUT.Business
     {
         private Tournament tournament;
         private TournamentRegistry tournamentRegistry = new TournamentRegistry();
-        internal List<Round> rounds = new List<Round>();
+        
 
         public void NewTournament(string name, string location, DateTime date)
         {
@@ -31,7 +31,13 @@ namespace WHUT.Business
                 newRound.AddMatch(match);
             }
 
-            rounds.Add(newRound);
+            tournament.Rounds.Add(newRound);
+        }
+
+        public void LoadTournament(string tournamentName)
+        {
+            tournamentRegistry.LoadTournament(tournamentName);
+
         }
     }
 }

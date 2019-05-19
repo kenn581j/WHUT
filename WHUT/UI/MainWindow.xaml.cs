@@ -35,10 +35,15 @@ namespace WHUT.UI
             ContentFrame.NavigationService.Navigate(new Content.CreatePlayer());
         }
 
+        private void StartTournament_Button_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.NavigationService.Navigate(new Content.BeginTournament());
+        }
+
         //Hele NewRound navigationen skal senere flyttes over til en singleton tournament? 
-        //private void StartNewRound_Butoon_Click(object sender, RoutedEventArgs e)
-        //{
-        //    ContentFrame.NavigationService.Navigate(new Content.NewRound());
-        //}
+        private void StartNewRound_Butoon_Click(object sender, RoutedEventArgs e)
+        {
+            //ContentFrame.NavigationService.Navigate(new Content.NewRound());
+        }
     }
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WHUT.Business;
+using WHUT.Properties;
 
-namespace WHUT.Domain
+namespace WHUT.Business
 {
     public class Ruleset
-    {      
+    {
         public List<Player> SingleElimination(List<Player> players)
         {
             //Remove PLayers who lost a match
@@ -87,9 +87,10 @@ namespace WHUT.Domain
         // hvis 2 er vi ikke længere i første runde
         private bool CheckIfFirstRound(List<Player> players)
         {
-            TournamentRepo tournementRepo = new TournamentRepo();
+            Tournament tournament = new Tournament();
+
             bool judgement;
-            if (tournementRepo.rounds.Count < 2)
+            if (tournament.Rounds.Count < 2)
             {
                 judgement = false;
             }
