@@ -19,7 +19,6 @@
         <StackPanel Grid.Column="0" Grid.Row="1" Margin="10, 10, 10, 10">
             <Button Name="NewTournament_Button" Content="New Tournament" Click="NewTournament_Button_Click" />
             <Button Name="CreatePlayer_Butoon" Content="Create Player" Click="CreatePlayer_Butoon_Click"/>
-            <Button Name="StartNewRound_Butoon" Content="Start a New Round" Click="StartNewRound_Butoon_Click"/>
             <Button Name="StartTournament_Button" Content="Begin Tournament" Click="StartTournament_Button_Click"/>
         </StackPanel>
 

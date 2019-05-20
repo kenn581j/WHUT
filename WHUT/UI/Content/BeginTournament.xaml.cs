@@ -30,9 +30,22 @@ namespace WHUT.UI.Content
         private void LoadTournament_Click(object sender, RoutedEventArgs e)
         {
             TournamentRepo tournamentRepo = new TournamentRepo();
-            tournamentRepo.LoadTournament(tournamentName.Text);
+            XmlDocument showTournament = tournamentRepo.LoadTournament(tournamentName.Text);
 
-            TournamentViewOnList.Items.Add(tournamentRepo);
+            if (showTournament != null)
+            {
+                TournamentWindow tournamentWindow = new TournamentWindow();
+                tournamentWindow.Show();
+                //TournamentViewOnList.Items.Add(showTournament);
+            }
+            else MessageBox.Show("Tournament: " + tournamentName.Text + ", wasn't found");
+        }
+
+        private void TournamentViewOnList_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            string selectedTournament = TournamentViewOnList.SelectedValue.ToString();
+            //Gå til valgt turnering med selectedTournament
+            MessageBox.Show(selectedTournament);
         }
     }
 }

@@ -15,7 +15,7 @@
             <Button Name="LoadTournament" Content="Load Tournament" Click="LoadTournament_Click"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Right" Width="300">
-            <ListView Name="TournamentViewOnList"/>
+            <ListBox Name="TournamentViewOnList" PreviewMouseLeftButtonUp="TournamentViewOnList_PreviewMouseLeftButtonUp"/>
         </StackPanel>
     </Grid>
 </Page>

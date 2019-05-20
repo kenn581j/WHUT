@@ -84,6 +84,9 @@
     <Compile Include="UI\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\TournamentWindow.xaml.cs">
+      <DependentUpon>TournamentWindow.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -130,6 +133,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\TournamentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
