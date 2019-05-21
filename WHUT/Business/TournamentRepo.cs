@@ -39,6 +39,12 @@ namespace WHUT.Business
         {
             Player player = tournament.GetParticipants.Find(playerName => playerName.Name == participant.ToString());
             tournament.GetParticipants.Remove(player);
+            AddRound(newRound);
+        }
+
+        public void AddRound(Round round)
+        {
+            rounds.Add(round);
         }
     }
 }
