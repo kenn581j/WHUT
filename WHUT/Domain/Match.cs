@@ -8,8 +8,8 @@ namespace WHUT.Domain
 {
     public class Match
     {
-        public Player FirstOpponent { get; set; }
-        public Player SecondOpponent { get; set; }
+        public Player FirstPlayer { get; set; }
+        public Player SecondPlayer { get; set; }
         public Player Winner { get; set; } = null;
     }
 }

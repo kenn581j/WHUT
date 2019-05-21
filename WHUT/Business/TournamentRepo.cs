@@ -27,6 +27,24 @@ namespace WHUT.Business
             tournamentRegistry.SaveTournament(tournament);
         }
 
+        public void ChangeMatch(Player firstPlayer, Player secondPlayer, Player thirdPlayer, Player FourthPlayer)
+        {
+            Match match1 = new Match(firstPlayer, secondPlayer);
+            match1.FirstPlayer = firstPlayer;
+            match1.SecondPlayer = secondPlayer;
+
+            Round round = new Round();
+            round.RemoveMatch(match1);
+
+            Match match2 = new Match(firstPlayer, secondPlayer);
+            match2.FirstPlayer = firstPlayer;
+            match2.SecondPlayer = secondPlayer;
+
+            round.RemoveMatch(match2);
+
+            round.AddMatch(new Match(firstPlayer, thirdPlayer));
+            round.AddMatch(new Match(secondPlayer, FourthPlayer));
+        }
         /* Skal lægges i round klassen måske? 
         public List<Match> Matching()
         {
