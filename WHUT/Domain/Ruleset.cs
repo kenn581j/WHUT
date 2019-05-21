@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WHUT.Domain
 {
     public class Ruleset
-    {      
+    {
         public List<Player> SingleElimination(List<Player> players)
         {
             //Remove PLayers who lost a match
@@ -46,7 +46,7 @@ namespace WHUT.Domain
             return (upperPlayers, lowerPlayers);
         }
 
-        public List<Player> Swiss(List<Player> players, int parringtype)
+        public List<Player> Swiss(List<Player> players)
         {
             if (CheckIfFirstRound(players))
             {
@@ -58,6 +58,11 @@ namespace WHUT.Domain
             }
 
             return players;
+        }
+
+        internal List<Player> GMSwiss(List<Player> participants)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Player> RoundRobin(List<Player> players)

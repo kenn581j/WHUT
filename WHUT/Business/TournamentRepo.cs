@@ -27,6 +27,11 @@ namespace WHUT.Business
             tournamentRegistry.SaveTournament(tournament);
         }
 
+        public void SelectRulesetVariant(string rulesetVariant)
+        {
+            tournament.SetRulesetVariant(rulesetVariant);
+        }
+
         /* Skal lægges i round klassen måske? 
         public List<Match> Matching()
         {
