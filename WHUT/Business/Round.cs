@@ -13,5 +13,10 @@ namespace WHUT.Business
             matches.Add(match);
             return matches;
         }
+
+        public void RemoveMatch(Match match)
+        {
+            matches.Remove(match)
+        }
     }
 }

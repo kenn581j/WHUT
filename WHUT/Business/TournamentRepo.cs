@@ -31,7 +31,12 @@ namespace WHUT.Business
                 newRound.AddMatch(match);
             }
 
-            rounds.Add(newRound);
+            AddRound(newRound);
+        }
+
+        public void AddRound(Round round)
+        {
+            rounds.Add(round);
         }
     }
 }
