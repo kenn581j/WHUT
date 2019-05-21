@@ -89,17 +89,17 @@ namespace WHUT.Business
         {
             Tournament tournament = new Tournament();
 
-            bool judgement;
+            bool firstRound;
             if (tournament.Rounds.Count < 2)
             {
-                judgement = false;
+                firstRound = false;
             }
             else
             {
-                judgement = true;
+                firstRound = true;
             }
 
-            return judgement;
+            return firstRound;
         }
         #endregion
     }

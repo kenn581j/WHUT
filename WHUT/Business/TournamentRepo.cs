@@ -13,19 +13,12 @@ namespace WHUT.Business
     public class TournamentRepo
     {
         private Tournament tournament = new Tournament();
-        private TournamentRegistry tournamentRegistry = new TournamentRegistry();
 
         public List<Player> Participants()
         {
             List<Player> participants = tournament.GetParticipants;
             
             return participants;
-        }
-
-        public void NewTournament(string name, string location, DateTime date)
-        {
-            tournament = new Tournament(name, location, date);
-            tournamentRegistry.SaveTournament(tournament);
         }
 
         public void NewRound()
@@ -47,13 +40,5 @@ namespace WHUT.Business
             Player player = tournament.GetParticipants.Find(playerName => playerName.Name == participant.ToString());
             tournament.GetParticipants.Remove(player);
         }
-        public XmlDocument LoadTournament(string tournamentName)
-        {
-            XmlDocument tournamentLoaded = tournamentRegistry.LoadTournament(tournamentName);
-
-            return tournamentLoaded;
-        }
-
-        
     }
 }

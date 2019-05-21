@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 using WHUT.Business;
 using WHUT.UI.Content;
 
@@ -21,16 +22,19 @@ namespace WHUT.UI
     /// </summary>
     public partial class TournamentWindow : Window
     {
-        private TournamentRepo tournamentRepo = new TournamentRepo();
+        Controller controller = new Controller();
 
-        public TournamentWindow()
+        public TournamentWindow(string tournamentName)
         {
             InitializeComponent();
+            string info = controller.GetTournamentInfo(tournamentName);
+            TournamentName.Text = tournamentName;
+            TournamentLocation.Text = info
         }
 
         private void AddParticipants_Button_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Player p in tournamentRepo.Participants())
+            foreach (Player p in controller.GetParticipants())
             {
                 ViewParticipants.Items.Add(p);
             }
@@ -46,7 +50,7 @@ namespace WHUT.UI
         public void RefreshParticipants()
         {
             ViewParticipants.Items.Clear();
-            foreach (Player p in tournamentRepo.Participants())
+            foreach (Player p in controller.GetParticipants())
             {
                 ViewParticipants.Items.Add(p);
             }

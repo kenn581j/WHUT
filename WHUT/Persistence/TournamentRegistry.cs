@@ -47,17 +47,14 @@ namespace WHUT.Business
             */
         }
 
-        public XmlDocument LoadTournament(string tournament)
+        public XDocument LoadTournament(string tournament)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.PreserveWhitespace = true;
-            try { doc.Load(path + tournament + ".xml"); }
-            catch
-            {
-                doc = null;
-            }
-
-
+            XDocument doc = XDocument.Load(tournament);
+            //try { doc.Load(path + tournament + ".xml"); }
+            //catch
+            //{
+            //    doc = null;
+            //}
             return doc;
         }
     }

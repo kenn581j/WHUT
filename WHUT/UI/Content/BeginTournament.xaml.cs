@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
+using System.Xml.Linq;
 using WHUT.Business;
 
 namespace WHUT.UI.Content
@@ -29,12 +30,12 @@ namespace WHUT.UI.Content
 
         private void LoadTournament_Click(object sender, RoutedEventArgs e)
         {
-            TournamentRepo tournamentRepo = new TournamentRepo();
-            XmlDocument showTournament = tournamentRepo.LoadTournament(tournamentName.Text);
+            Controller controller = new Controller();
+            XDocument showTournament = controller.LoadTournament(tournamentName.Text);
 
             if (showTournament != null)
             {
-                TournamentWindow tournamentWindow = new TournamentWindow();
+                TournamentWindow tournamentWindow = new TournamentWindow(tournamentName.Text);
                 tournamentWindow.Show();
                 //TournamentViewOnList.Items.Add(showTournament);
             }

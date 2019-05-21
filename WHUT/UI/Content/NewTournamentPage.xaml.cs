@@ -37,8 +37,8 @@ namespace WHUT.UI.Content
             {
                 try
                 {
-                    TournamentRepo tournamentRepo = new TournamentRepo();
-                    tournamentRepo.NewTournament(tournamentName.Text, location.Text, date.DisplayDate);
+                    Controller controller = new Controller();
+                    controller.NewTournament(tournamentName.Text, location.Text, date.DisplayDate);
                 }
                 catch
                 {
