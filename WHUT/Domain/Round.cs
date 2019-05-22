@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using WHUT.Domain;
 
-namespace WHUT.Business
+namespace WHUT.Domain
 {
     public class Round
     {
@@ -16,7 +15,7 @@ namespace WHUT.Business
 
         public void RemoveMatch(Match match)
         {
-            matches.Remove(match)
+            matches.Remove(match);
         }
     }
 }

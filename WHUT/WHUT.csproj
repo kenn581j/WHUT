@@ -60,7 +60,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Business\Round.cs" />
+    <Compile Include="Domain\Round.cs" />
     <Compile Include="Domain\Match.cs" />
     <Compile Include="Domain\Player.cs" />
     <Compile Include="Business\Ruleset.cs" />

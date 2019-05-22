@@ -11,7 +11,6 @@ namespace WHUT.Business
     {
         private Tournament tournament;
         private TournamentRegistry tournamentRegistry = new TournamentRegistry();
-        internal List<Round> rounds = new List<Round>();
 
         public void NewTournament(string name, string location, DateTime date)
         {
@@ -36,7 +35,7 @@ namespace WHUT.Business
 
         public void AddRound(Round round)
         {
-            rounds.Add(round);
+            tournament.rounds.Add(round);
         }
     }
 }
