@@ -91,7 +91,7 @@ namespace WHUT.Domain
             }
             
 
-            return null;
+            return pairedPlayers;
         }
 
         #region Private Methods
