@@ -20,10 +20,10 @@ namespace WHUT.Domain
                 new Player("Libak", "Danmark", "Stormsire's Cursebreakers", 6, 0, 30)
                 };
 
-        public List<Player> GetParticipants()
+        public List<Player> GetParticipants
         {
-            new List<Player>(participants); //Henter stubkoden, skal senere skiftes til en xmlreader? 
-            return participants;
+            get { return participants; }
+            set { participants = value; }
         }
 
         public string Name { get; private set; }

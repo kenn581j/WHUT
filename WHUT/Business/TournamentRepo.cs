@@ -20,7 +20,7 @@ namespace WHUT.Business
 
         public void NewRound()
         {
-            List<Player> participants = tournament.GetParticipants();
+            List<Player> participants = tournament.GetParticipants;
             Round newRound = new Round();
             int j = 0;
             for (int i = 0; i < participants.Count / 2; i++)
