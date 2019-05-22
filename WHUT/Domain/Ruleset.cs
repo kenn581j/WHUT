@@ -8,7 +8,7 @@ using WHUT.Business;
 namespace WHUT.Domain
 {
     public class Ruleset
-    {      
+    {
         public List<Player> SingleElimination(List<Player> players)
         {
             //Remove PLayers who lost a match
@@ -64,6 +64,11 @@ namespace WHUT.Domain
         {
             //Implement Logic
             return players;
+        }
+
+        internal List<Player> GMSwiss(List<Player> participants)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Player> RoundRobin(List<Player> players)

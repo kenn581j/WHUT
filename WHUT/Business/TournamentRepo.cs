@@ -17,7 +17,7 @@ namespace WHUT.Business
             tournament = new Tournament(name, location, date);
             tournamentRegistry.SaveTournament(tournament);
         }
-
+      
         public void NewRound()
         {
             List<Player> participants = SortParticipants(tournament.TournamentType, tournament.Participants);
