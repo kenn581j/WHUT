@@ -36,7 +36,7 @@ namespace WHUT.Domain
             //Check to see if it's the first round of play
             if (lowerPlayers == null)
             {
-                return Shuffle(upperPlayers);
+                return (Shuffle(upperPlayers), null);
             }
 
             //Move all players with 1 loss to lower bracket
@@ -59,6 +59,11 @@ namespace WHUT.Domain
 
             return (Shuffle(upperPlayers), Shuffle(lowerPlayers));
         }
+        public (List<Player>, List<Player>) DoubleElimination(List<Player> players)
+        {
+            return DoubleElimination(players, null);
+        }
+
 
         public List<Player> Swiss(List<Player> players, int parringtype)
         {
