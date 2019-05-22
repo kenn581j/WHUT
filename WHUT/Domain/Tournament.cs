@@ -19,7 +19,11 @@ namespace WHUT.Domain
                 new Player("Kim", "Danmark", "Stormsire's Cursebreakers", 6, 1, 7),
                 new Player("Libak", "Danmark", "Stormsire's Cursebreakers", 6, 0, 30)
                 };
-
+        public string SetRulesetVariant
+        {
+            get;
+            set;
+        }
         public Tournament(string name, string location, DateTime date)
         {
             Name = name;
@@ -30,26 +34,6 @@ namespace WHUT.Domain
         public override string ToString()
         {
             return Name + Location + Date;
-        }
-
-        public string SetRulesetVariant(string rulesetVariant)
-        {
-            Ruleset ruleset = new Ruleset();
-
-            switch (rulesetVariant)
-            {
-                case "Monrad Swiss":
-                    ruleset.Swiss(participants);
-                    break;
-                case "Games Workshop Swiss":
-                    ruleset.GMSwiss(participants);
-                    break;
-                default:
-                    rulesetVariant = null;
-                    break;
-            }
-
-            return rulesetVariant;
         }
     }
 }

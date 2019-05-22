@@ -29,7 +29,7 @@ namespace WHUT.Business
 
         public void SelectRulesetVariant(string rulesetVariant)
         {
-            tournament.SetRulesetVariant(rulesetVariant);
+            tournament.SetRulesetVariant = rulesetVariant;
         }
 
         /* Skal lægges i round klassen måske? 
