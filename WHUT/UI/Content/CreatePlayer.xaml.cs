@@ -30,8 +30,8 @@ namespace WHUT.UI.Content
         {
             //try
             //{
-                PlayerRepo playerRepository = new PlayerRepo();
-                playerRepository.RegisterPlayer(playerName.Text, playerClub.Text, playerWarband.Text);
+            PlayerRepo playerRepository = new PlayerRepo();
+            playerRepository.RegisterPlayer(playerName.Text, playerClub.Text, playerWarband.Text);
             MessageBox.Show($"New player: {playerName.Text}, has been created");
 
             //}
