@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WHUT.Business;
 
 namespace WHUT.Domain
 {
@@ -46,7 +47,7 @@ namespace WHUT.Domain
             return (upperPlayers, lowerPlayers);
         }
 
-        public List<Player> Swiss(List<Player> players, int parringtype)
+        public List<Player> Swiss(List<Player> players)
         {
             if (CheckIfFirstRound(players))
             {
@@ -57,6 +58,11 @@ namespace WHUT.Domain
                 players = players.OrderByDescending(x => x.Score).ThenByDescending(x => x.TiebreakerLoss).ThenByDescending(x => x.TiebreakerGloryDiff).ToList(); // Sorting the list with LINQ methods to pair players according to Swiss rules
             }
 
+            return players;
+        }
+        public List<Player> GMSwiss(List<Player> players)
+        {
+            //Implement Logic
             return players;
         }
 
