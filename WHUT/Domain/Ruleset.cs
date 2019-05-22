@@ -83,7 +83,7 @@ namespace WHUT.Domain
             return players;
         }
 
-        internal List<Player> GMSwiss(List<Player> participants)
+        internal List<Player> GameWorkShopSwiss(List<Player> participants)
         {
             throw new NotImplementedException();
         }
