@@ -8,7 +8,6 @@ namespace WHUT.Domain
 {
     public class Tournament
     {
-
         public List<Round> rounds = new List<Round>();
 
         //Stub liste
@@ -20,12 +19,16 @@ namespace WHUT.Domain
                 new Player("Libak", "Danmark", "Stormsire's Cursebreakers", 6, 0, 30)
                 };
 
-        public List<Player> GetParticipants
+        public List<Player> Participants
         {
             get { return participants; }
             set { participants = value; }
         }
-
+        public string TournamentType
+        {
+            get;
+            set;
+        }
         public string Name { get; private set; }
         public string Location { get; private set; }
         public DateTime Date { get; private set; }

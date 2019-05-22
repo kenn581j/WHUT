@@ -63,7 +63,7 @@
     <Compile Include="Domain\Round.cs" />
     <Compile Include="Domain\Match.cs" />
     <Compile Include="Domain\Player.cs" />
-    <Compile Include="Business\Ruleset.cs" />
+    <Compile Include="Domain\Ruleset.cs" />
     <Compile Include="Domain\Tournament.cs" />
     <Compile Include="Business\TournamentRepo.cs" />
     <Compile Include="Business\PlayerRepo.cs" />

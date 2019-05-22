@@ -47,7 +47,7 @@ namespace WHUT.Domain
             return (upperPlayers, lowerPlayers);
         }
 
-        public List<Player> Swiss(List<Player> players, int parringtype)
+        public List<Player> Swiss(List<Player> players)
         {
             if (CheckIfFirstRound(players))
             {
@@ -58,6 +58,11 @@ namespace WHUT.Domain
                 players = players.OrderByDescending(x => x.Score).ThenByDescending(x => x.TiebreakerLoss).ThenByDescending(x => x.TiebreakerGloryDiff).ToList(); // Sorting the list with LINQ methods to pair players according to Swiss rules
             }
 
+            return players;
+        }
+        public List<Player> GMSwiss(List<Player> players)
+        {
+            //Implement Logic
             return players;
         }
 
@@ -79,26 +84,6 @@ namespace WHUT.Domain
             }
 
             return playersShuffled;
-        }
-
-        // Vi tæller antallet af objekter i listen rounds, for at finde ud af hvor langt vi er i turneringen.
-        // hvis 0 er turneringen slet ikke klar
-        // hvis 1 er turneringen klar
-        // hvis 2 er vi ikke længere i første runde
-        private bool CheckIfFirstRound(List<Player> players)
-        {
-            TournamentRepo tournementRepo = new TournamentRepo();
-            bool judgement;
-            if (tournementRepo.rounds.Count < 2)
-            {
-                judgement = false;
-            }
-            else
-            {
-                judgement = true;
-            }
-
-            return judgement;
         }
         #endregion
     }
