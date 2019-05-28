@@ -42,7 +42,7 @@ namespace WHUT.UI
 
         private void BeginTournament_Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            ContentFrame.NavigationService.Navigate(new Content.SearchForTournamentPage());
         }
     }
 }
