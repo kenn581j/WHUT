@@ -9,6 +9,6 @@
       Title="TournamentPage">
 
     <Grid>
-        
+        <ListView Name="ViewTournamentInformation"/>
     </Grid>
 </Page>

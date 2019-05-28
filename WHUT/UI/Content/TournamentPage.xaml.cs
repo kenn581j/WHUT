@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
+using WHUT.Business;
 
 namespace WHUT.UI.Content
 {
@@ -20,9 +22,13 @@ namespace WHUT.UI.Content
     /// </summary>
     public partial class TournamentPage : Page
     {
-        public TournamentPage()
+        public TournamentPage(string tournamentName)
         {
             InitializeComponent();
+            Controller controller = new Controller();
+            
+            XDocument showTournament = controller.LoadTournament(tournamentName);
+            ViewTournamentInformation.Items.Add(showTournament);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace WHUT.Business
 {
     class Controller
     {
-        internal XDocument LoadTournament(string text)
+        public XDocument LoadTournament(string text)
         {
             throw new NotImplementedException();
         }
