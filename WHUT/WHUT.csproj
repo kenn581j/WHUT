@@ -65,6 +65,7 @@
     <Compile Include="Business\DBController.cs" />
     <Compile Include="Domain\Match.cs" />
     <Compile Include="Domain\Player.cs" />
+    <Compile Include="Domain\Round.cs" />
     <Compile Include="Domain\Ruleset.cs" />
     <Compile Include="Domain\Tournament.cs" />
     <Compile Include="Business\TournamentRepo.cs" />
