@@ -9,6 +9,10 @@
       Title="SearchForTournamentPage">
 
     <Grid>
-        
+        <StackPanel HorizontalAlignment="left" Width="300">
+            <TextBlock FontSize="20" Text="Provide the name of the tournament, that you wish to start."/>
+            <TextBox Name="tournamentName" Height="30"/>
+            <Button Name="LoadTournament" Content="Load Tournament" Click="LoadTournament_Click"/>
+        </StackPanel>
     </Grid>
 </Page>
