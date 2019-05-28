@@ -31,7 +31,7 @@ namespace WHUT.UI.Content
         {
             Controller controller = new Controller();
             XDocument showTournament = controller.LoadTournament(tournamentName.Text);
-
+            
             if (showTournament != null)
             {
                 NavigationService.Navigate(new TournamentPage(tournamentName.Text));

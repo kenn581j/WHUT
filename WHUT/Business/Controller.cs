@@ -15,11 +15,18 @@ namespace WHUT.Business
         private PlayerRegistry playerRegistry = new PlayerRegistry();
         private PlayerRepo playerRepo = new PlayerRepo();
 
+        public string TournamentName { get; set; }
+
         public XDocument LoadTournament(string tournamentName)
         {
             XDocument tournamentLoaded = tournamentRegistry.LoadTournament(tournamentName);
-
+            
             return tournamentLoaded;
+        }
+
+        public override string ToString()
+        {
+            return $"{TournamentName}";
         }
     }
 }

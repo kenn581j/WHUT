@@ -25,6 +25,12 @@ namespace WHUT.UI.Content
         public TournamentPage(string tournamentName)
         {
             InitializeComponent();
+            showTournamentName.Text = tournamentName;
+            Controller controller = new Controller();
+
+            showTournamentLocation.Text = controller.ToString();
         }
+
+
     }
 }

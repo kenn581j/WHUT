@@ -23,6 +23,7 @@ namespace WHUT.UI
         {
             InitializeComponent();
             ContentFrame.NavigationService.Navigate(new Content.FrontPage());
+            
         }
 
         private void NewTournament_Button_Click(object sender, RoutedEventArgs e)
