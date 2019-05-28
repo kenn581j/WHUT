@@ -61,6 +61,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Business\Controller.cs" />
     <Compile Include="Business\DBController.cs" />
     <Compile Include="Domain\Match.cs" />
     <Compile Include="Domain\Player.cs" />
@@ -81,6 +82,9 @@
     </Compile>
     <Compile Include="UI\Content\SearchForTournamentPage.xaml.cs">
       <DependentUpon>SearchForTournamentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Content\TournamentPage.xaml.cs">
+      <DependentUpon>TournamentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -131,6 +135,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Content\SearchForTournamentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Content\TournamentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -22,6 +22,7 @@ namespace WHUT.UI
         public MainWindow()
         {
             InitializeComponent();
+            SelectedTournamentMenu.Visibility = Visibility.Hidden;
             ContentFrame.NavigationService.Navigate(new Content.FrontPage());
         }
 
@@ -43,6 +44,41 @@ namespace WHUT.UI
         private void BeginTournament_Button_Click(object sender, RoutedEventArgs e)
         {
             ContentFrame.NavigationService.Navigate(new Content.SearchForTournamentPage());
+        }
+
+        public void ToggleBaseMenuOff()
+        {
+            BaseMenu.Visibility = Visibility.Hidden;
+            SelectedTournamentMenu.Visibility = Visibility.Visible;
+        }
+        private void ChooseRuleset_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void StartNewRound_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RegisterMatchResults_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DrawNewParrings_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ManuallyChangeMatch_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ShowScore_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

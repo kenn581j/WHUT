@@ -20,8 +20,8 @@
                    FontFamily="Comic Sans MS" FontSize="24" 
                    HorizontalAlignment="Center" VerticalAlignment="Center"
                    Grid.Column="1" Grid.Row="0"/>
-        
-        <StackPanel Grid.Column="0" Grid.Row="1" Margin="5,5,5,5">
+
+        <StackPanel Name="BaseMenu" Grid.Column="0" Grid.Row="1" Margin="5,5,5,5">
             <Button Name="NewTournament_Button" Content="New Tournament" Click="NewTournament_Button_Click" 
                     HorizontalContentAlignment="Left" Width="150" FontFamily="Verdana" FontSize="14" Background="LightBlue"
                     Margin="1,1,1,1"/>
@@ -35,6 +35,27 @@
                     HorizontalContentAlignment="Left" Width="150" FontFamily="Verdana" FontSize="14" Background="LightBlue"
                     Margin="1,1,1,1"/>
         </StackPanel>
+        <StackPanel Name="SelectedTournamentMenu" Grid.Column="0" Grid.Row="1" Margin="5,5,5,5">
+            <Button Name="ChooseRuleset" Content="Choose Ruleset" Click="ChooseRuleset_Click"
+                        HorizontalContentAlignment="Left" Width="150" FontFamily="Verdana" FontSize="14" Background="LightBlue"
+                        Margin="1,1,1,1"/>
+            <Button Name="StartNewRound_Button" Content="Start a New Round" Click="StartNewRound_Button_Click"
+                        HorizontalContentAlignment="Left" Width="150" FontFamily="Verdana" FontSize="14" Background="LightBlue"
+                        Margin="1,1,1,1"/>
+            <Button Name="RegisterMatchResults" Content="Register Match Results" Click="RegisterMatchResults_Click_1"
+                        HorizontalContentAlignment="Left" Width="150" FontFamily="Verdana" FontSize="14" Background="LightBlue"
+                        Margin="1,1,1,1"/>
+            <Button Name="DrawNewParrings" Content="Draw New Parrings" Click="DrawNewParrings_Click" 
+                        HorizontalContentAlignment="Left" Width="150" FontFamily="Verdana" FontSize="14" Background="LightBlue"
+                        Margin="1,1,1,1"/>
+            <Button Name="ManuallyChangeMatch" Content="Change a Match" Click="ManuallyChangeMatch_Click"
+                        HorizontalContentAlignment="Left" Width="150" FontFamily="Verdana" FontSize="14" Background="LightBlue"
+                        Margin="1,1,1,1"/>
+            <Button Name="ShowScore" Content="Show Score" Click="ShowScore_Click"
+                        HorizontalContentAlignment="Left" Width="150" FontFamily="Verdana" FontSize="14" Background="LightBlue"
+                        Margin="1,1,1,1"/>
+        </StackPanel>
+
 
         <Frame Name="ContentFrame" Grid.Column="1" Grid.Row="1"
                Margin="10, 10, 10, 10" 

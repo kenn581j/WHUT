@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
+using WHUT.Business;
 
 namespace WHUT.UI.Content
 {
@@ -33,8 +34,9 @@ namespace WHUT.UI.Content
 
             if (showTournament != null)
             {
-                TournamentWindow tournamentWindow = new TournamentWindow(tournamentName.text);
-                tournamentWindow.Show();
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.ToggleBaseMenuOff();
+                NavigationService.Navigate(new TournamentPage(tournamentName.Text));
             }
             else MessageBox.Show("Tournament: " + tournamentName.Text + ", was not found.");
 
