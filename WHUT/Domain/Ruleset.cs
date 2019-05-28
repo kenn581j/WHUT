@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WHUT.Business;
 
 namespace WHUT.Domain
 {
     public class Ruleset
-    {        
-        public bool PlayerMetAlready { get; private set; } // Midlertidlig bool property
-
-        #region SingleElimination Methods
-
+    {
         public List<Player> SingleElimination(List<Player> players)
         {
-            //Remove PLayers who lost a match
-            foreach(Player player in players)
+            //Check to see if it's the first round of play
+            if (CheckIfFirstRound(players))
             {
-                if(players.Count < 0)
+                return Shuffle(players);
+            }
+
+            //Remove Players who lost a match
+            foreach (Player player in players)
+            {
+                if (player.Losses > 0)
                 {
                     players.Remove(player);
                 }
@@ -27,23 +30,26 @@ namespace WHUT.Domain
             return Shuffle(players);
         }
 
-        #endregion
-
-        #region DoubleElimination Methods
 
         public (List<Player>, List<Player>) DoubleElimination(List<Player> upperPlayers, List<Player> lowerPlayers)
-        {           
-            //Move all players with 1 loss to lower bracket
-            foreach(Player player in upperPlayers)
+        {
+            //Check to see if it's the first round of play
+            if (lowerPlayers == null)
             {
-                if (player.Losses < 0)
+                return (Shuffle(upperPlayers), null);
+            }
+
+            //Move all players with 1 loss to lower bracket
+            foreach (Player player in upperPlayers)
+            {
+                if (player.Losses > 0)
                 {
                     lowerPlayers.Add(player);
                     upperPlayers.Remove(player);
                 }
             }
             //Remove all players with 2 losses in lower bracket
-            foreach(Player player in lowerPlayers)
+            foreach (Player player in lowerPlayers)
             {
                 if (player.Losses > 1)
                 {
@@ -51,75 +57,61 @@ namespace WHUT.Domain
                 }
             }
 
-            return (upperPlayers, lowerPlayers);
+            return (Shuffle(upperPlayers), Shuffle(lowerPlayers));
+        }
+        public (List<Player>, List<Player>) DoubleElimination(List<Player> players)
+        {
+            return DoubleElimination(players, null);
         }
 
-        #endregion
-
-        #region Swiss Methods
-
-        public List<Player> Swiss(List<Player> players, int parringtype)
+        public List<Player> Swiss(List<Player> players)
         {
-            SwissSort(players);
-            
-            Player firstPlayer = null;
-            Player secondPlayer = null;
-
-            for (int i = 0; i < players.Count; i++)
+            if (CheckIfFirstRound(players))
             {
-                int j = 1;
-
-                if (firstPlayer == players.Last())
-                {
-                    secondPlayer = Bye();
-                }
-
-                if (PlayerMetAlready == true)
-                {
-                    j += 1;
-                }
-                
-                firstPlayer = players[i];
-                secondPlayer = players[i + j];
+                players = Shuffle(players);
+            }
+            else
+            {
+                players = players.OrderByDescending(x => x.Score).ThenByDescending(x => x.TiebreakerLoss).ThenByDescending(x => x.TiebreakerGloryDiff).ToList(); // Sorting the list with LINQ methods to pair players according to Swiss rules
             }
 
             return players;
         }
-
-
-
-        public List<Player> GWSwiss(List<Player> players, int parringtype)
+        public List<Player> GMSwiss(List<Player> players)
         {
-            SwissSort(players);
-
-            //players.GroupBy(
-            //    x => x.Name,
-            //    x => x.Score,
-            //    (key, group) => new { Score = key, Player = group.ToList() });
-
-            //players.GroupJoin(players,
-            //    score => score,
-            //    player => player,
-            //    (score, playerCollection) =>
-            //        new
-            //            {
-            //                ScoreGroup = score.Score,
-            //                players = playerCollection.Select(player => player.Name)
-            //            });
-
+            //Implement Logic
             return players;
         }
 
-        #endregion
-
-        #region RoundRobin Methods
+        internal List<Player> GameWorkShopSwiss(List<Player> participants)
+        {
+            throw new NotImplementedException();
+        }
 
         public List<Player> RoundRobin(List<Player> players)
         {
-            return null;
-        }
+            //Check to see if it's the first round of play
+            if (CheckIfFirstRound(players))
+            {
+                //Mangler at added en dumme spiller hvis der er ulige antal
+                Shuffle(players);
+            }
+            else
+            {
+                //Push all players one space in the list while keeping player one in place. Ex. 1-2-3-4 to 1-4-2-3
 
-        #endregion
+            }
+            //Pair players so player one meets the last player in the list and player two the second last. Ex 1-2-3-4-5-6. 1 vs 6, 2 vs 4.... 
+            List<Player> pairedPlayers = new List<Player>();
+            for (int i = 0; i < players.Count / 2; i++)
+            {
+                pairedPlayers.Add(players[i]);
+                pairedPlayers.Add(players[players.Count - i]);
+            }
+
+
+            return pairedPlayers;
+        }
 
         #region Private Methods
         private List<Player> Shuffle(List<Player> players)
@@ -127,7 +119,7 @@ namespace WHUT.Domain
             List<Player> playersShuffled = new List<Player>();
             Random rand = new Random();
 
-            while(players.Count < 0)
+            for (int i = 0; i < players.Count; i++)
             {
                 int nextIndex = rand.Next(players.Count + 1);
                 playersShuffled.Add(players[nextIndex]);
@@ -135,25 +127,18 @@ namespace WHUT.Domain
 
             return playersShuffled;
         }
-        private Player Bye()
-        {
-            throw new NotImplementedException();
-        }
-
         private bool CheckIfFirstRound(List<Player> players)
         {
-            return false;
-        }
+            int result = 0;
+            players.ForEach(x => result += x.Score);
 
-        private void SwissSort(List<Player> players)
-        {
-            if (CheckIfFirstRound(players))
+            if (result == 0)
             {
-                Shuffle(players);
+                return true;
             }
             else
             {
-                players.OrderBy(x => x.Score).ThenBy(x => x.TiebreakerLoss).ThenBy(x => x.TiebreakerGloryDiff); // Sorting the list with LINQ methods to pair players according to Swiss rules
+                return false;
             }
         }
         #endregion
