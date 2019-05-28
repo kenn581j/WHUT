@@ -8,9 +8,9 @@ namespace WHUT.Domain
 {
     public class Tournament
     {
-        public string Name { get; private set; }
-        public string Location { get; private set; }
-        public DateTime Date { get; private set; }
+        public string Name { get; set; }
+        public string Location { get; set; }
+        public DateTime Date { get; set; }
 
         public Tournament(string name, string location, DateTime date)
         {

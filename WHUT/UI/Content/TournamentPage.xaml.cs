@@ -25,10 +25,6 @@ namespace WHUT.UI.Content
         public TournamentPage(string tournamentName)
         {
             InitializeComponent();
-            Controller controller = new Controller();
-            
-            XDocument showTournament = controller.LoadTournament(tournamentName);
-            ViewTournamentInformation.Items.Add(showTournament);
         }
     }
 }

@@ -34,13 +34,9 @@ namespace WHUT.UI.Content
 
             if (showTournament != null)
             {
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.ToggleBaseMenuOff();
                 NavigationService.Navigate(new TournamentPage(tournamentName.Text));
             }
             else MessageBox.Show("Tournament: " + tournamentName.Text + ", was not found.");
-
-
         }
     }
 }
