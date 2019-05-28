@@ -6,19 +6,34 @@
         xmlns:local="clr-namespace:WHUT.UI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="GhostWhite">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
-
-        <StackPanel Grid.Column="0" Grid.Row="1" Margin="10, 10, 10, 10">
-            <Button Name="NewTournament_Button" Content="New Tournament" Click="NewTournament_Button_Click" />
-            <Button Name="CreatePlayer_Butoon" Content="Create Player" Click="CreatePlayer_Butoon_Click"/>
+        <Image Source="Logo.png" Grid.Column="0" Grid.Row="0"/>
+        <TextBlock Text="Warhammer Underworld Tournament System" 
+                   FontFamily="Comic Sans MS" FontSize="24" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Grid.Column="1" Grid.Row="0"/>
+        
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="5,5,5,5">
+            <Button Name="NewTournament_Button" Content="New Tournament" Click="NewTournament_Button_Click" 
+                    HorizontalContentAlignment="Left" Width="150" FontFamily="Verdana" FontSize="14" Background="LightBlue"
+                    Margin="1,1,1,1"/>
+            <Button Name="CreatePlayer_Button" Content="Create Player" Click="CreatePlayer_Butoon_Click" 
+                    HorizontalContentAlignment="Left" Width="150" FontFamily="Verdana" FontSize="14" Background="LightBlue"
+                    Margin="1,1,1,1"/>
+            <Button Name="RenameTournament_Button" Content="Rename Tournament" Click="RenameTournament_Button_Click" 
+                    HorizontalContentAlignment="Left" Width="150" FontFamily="Verdana" FontSize="14" Background="LightBlue"
+                    Margin="1,1,1,1"/>
+            <Button Name="BeginTournament_Button" Content="Begin a Tournament" Click="BeginTournament_Button_Click" 
+                    HorizontalContentAlignment="Left" Width="150" FontFamily="Verdana" FontSize="14" Background="LightBlue"
+                    Margin="1,1,1,1"/>
         </StackPanel>
 
         <Frame Name="ContentFrame" Grid.Column="1" Grid.Row="1"

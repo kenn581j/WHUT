@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WHUT.Business;
 
 namespace WHUT.UI.Content
 {
@@ -24,21 +23,6 @@ namespace WHUT.UI.Content
         public CreatePlayer()
         {
             InitializeComponent();
-        }
-
-        private void Save_Click(object sender, RoutedEventArgs e)
-        {
-            //try
-            //{
-                PlayerRepo playerRepository = new PlayerRepo();
-                playerRepository.RegisterPlayer(playerName.Text, playerClub.Text, playerWarband.Text);
-            MessageBox.Show($"New player: {playerName.Text}, has been created");
-
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Fejl");
-            //}
         }
     }
 }

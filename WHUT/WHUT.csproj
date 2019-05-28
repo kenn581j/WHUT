@@ -70,6 +70,9 @@
     <Compile Include="Business\PlayerRepo.cs" />
     <Compile Include="Persistence\PlayerRegistry.cs" />
     <Compile Include="Persistence\TournamentRegistry.cs" />
+    <Compile Include="UI\Content\CreatePlayer.xaml.cs">
+      <DependentUpon>CreatePlayer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Content\FrontPage.xaml.cs">
       <DependentUpon>FrontPage.xaml</DependentUpon>
     </Compile>
@@ -108,8 +111,14 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Resource Include="UI\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UI\Content\CreatePlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Content\FrontPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
