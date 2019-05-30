@@ -35,10 +35,43 @@ namespace WHUT.UI
             ContentFrame.NavigationService.Navigate(new Content.CreatePlayer());
         }
 
-        //Hele NewRound navigationen skal senere flyttes over til en singleton tournament? 
-        //private void StartNewRound_Butoon_Click(object sender, RoutedEventArgs e)
-        //{
-        //    ContentFrame.NavigationService.Navigate(new Content.NewRound());
-        //}
+        private void RenameTournament_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BeginTournament_Button_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.NavigationService.Navigate(new Content.SearchForTournamentPage());
+        }
+        private void ChooseRuleset_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void StartNewRound_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RegisterMatchResults_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DrawNewParrings_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ManuallyChangeMatch_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ShowScore_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
