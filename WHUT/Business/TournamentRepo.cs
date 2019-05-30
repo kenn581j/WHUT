@@ -50,7 +50,7 @@ namespace WHUT.Business
                     sortParticipants = ruleset.SingleElimination(participants);
                     break;
                 case "Double Elimination":
-                    sortParticipants = ruleset.DoubleElimination(participants);
+                    //sortParticipants = ruleset.DoubleElimination(participants);
                     break;
                 case "Round Robin":
                     sortParticipants = ruleset.RoundRobin(participants);
