@@ -82,8 +82,8 @@
     <Compile Include="UI\Content\SearchForTournamentPage.xaml.cs">
       <DependentUpon>SearchForTournamentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Content\Tournament.xaml.cs">
-      <DependentUpon>Tournament.xaml</DependentUpon>
+    <Compile Include="UI\Content\TournamentPage.xaml.cs">
+      <DependentUpon>TournamentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -133,7 +133,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Content\Tournament.xaml">
+    <Page Include="UI\Content\TournamentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

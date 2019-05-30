@@ -18,9 +18,9 @@ namespace WHUT.UI.Content
     /// <summary>
     /// Interaction logic for Tournament.xaml
     /// </summary>
-    public partial class Tournament : Page
+    public partial class TournamentPage : Page
     {
-        public Tournament()
+        public TournamentPage()
         {
             InitializeComponent();
         }
