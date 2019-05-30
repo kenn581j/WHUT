@@ -44,7 +44,7 @@ namespace WHUT.Business
                     sortParticipants = ruleset.Swiss(participants);
                     break;
                 case "Games Workshop Swiss":
-                    sortParticipants = ruleset.GMSwiss(participants);
+                    sortParticipants = ruleset.GameWorkShopSwiss(participants);
                     break;
                 case "Single Elimination":
                     sortParticipants = ruleset.SingleElimination(participants);
