@@ -24,5 +24,19 @@ namespace WHUT.UI.Content
         {
             InitializeComponent();
         }
+        private void LoadTournament_Click(object sender, RoutedEventArgs e)
+        {
+            Controller controller = new Controller();
+            bool tournament = controller.LoadTournament(tournamentName.Text);
+
+            if (tournament == true)
+            {
+                NavigationService.Navigate(new TournamentPage());
+            }
+            else
+            {
+                MessageBox.Show("Tournament: " + tournamentName.Text + ", was not found.");
+            }
+        }
     }
 }
