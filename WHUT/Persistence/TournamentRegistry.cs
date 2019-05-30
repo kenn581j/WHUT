@@ -8,7 +8,7 @@ using System.Xml;
 using System.Xml.Linq;
 using WHUT.Domain;
 
-namespace WHUT.Business
+namespace WHUT.Persistence
 {
     public class TournamentRegistry
     {
@@ -46,17 +46,37 @@ namespace WHUT.Business
 
         public Tournament LoadTournament(string tournamentName)
         {
-            XDocument doc;
+            XElement doc;
             try
             {
-                doc = XDocument.Load(path + tournamentName + ".xml");
+                doc = XElement.Load(path + tournamentName + ".xml");
             }
             catch
             {
                 doc = null;
             }
+            //FIX DET HER JIMMY
+            IEnumerable<string> tName =
+                from i in doc.Descendants("Name")
+                select (string)i;
+            IEnumerable<string> tLocation =
+                from i in doc.Descendants("Location")
+                select (string)i;
+            IEnumerable<DateTime> tDate =
+                from i in doc.Descendants("Date")
+                select (DateTime)i;
 
-            Tournament tournament = new Tournament(doc.Element("Name").ToString(), doc.Element("Location").ToString(), DateTime.Parse(doc.Element("Date").ToString()));
+            string name = tName.Aggregate(new StringBuilder(),
+                (sb, i) => sb.Append(i),
+                    sp => sp.ToString());
+            string location = tLocation.Aggregate(new StringBuilder(),
+                (sb, i) => sb.Append(i),
+                    sp => sp.ToString());
+            string date = tDate.Aggregate(new StringBuilder(),
+                (sb, i) => sb.Append(i),
+                    sp => sp.ToString());
+
+            Tournament tournament = new Tournament(name, tLocation.ToString(), DateTime.Parse(date));
 
             return tournament;
         }

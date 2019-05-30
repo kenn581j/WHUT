@@ -60,14 +60,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Business\Controller.cs" />
+    <Compile Include="Application\Controller.cs" />
     <Compile Include="Domain\Round.cs" />
     <Compile Include="Domain\Match.cs" />
     <Compile Include="Domain\Player.cs" />
     <Compile Include="Domain\Ruleset.cs" />
     <Compile Include="Domain\Tournament.cs" />
-    <Compile Include="Business\TournamentRepo.cs" />
-    <Compile Include="Business\PlayerRepo.cs" />
+    <Compile Include="Application\TournamentRepo.cs" />
+    <Compile Include="Application\PlayerRepo.cs" />
     <Compile Include="Persistence\PlayerRegistry.cs" />
     <Compile Include="Persistence\TournamentRegistry.cs" />
     <Compile Include="UI\Content\CreatePlayer.xaml.cs">
@@ -115,7 +115,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="UI\logo.png" />
+  </ItemGroup>
   <ItemGroup>
     <Page Include="UI\Content\CreatePlayer.xaml">
       <SubType>Designer</SubType>
