@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WHUT.Domain;
+using WHUT.Persistence;
 
-namespace WHUT.Business
+namespace WHUT.Application
 {
     public class Controller
     {

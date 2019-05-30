@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WHUT.Business;
+using WHUT.Application;
 
 namespace WHUT.Domain
 {
@@ -77,13 +77,8 @@ namespace WHUT.Domain
 
             return players;
         }
-        public List<Player> GMSwiss(List<Player> players)
-        {
-            //Implement Logic
-            return players;
-        }
 
-        internal List<Player> GameWorkShopSwiss(List<Player> participants)
+        internal List<Player> GamesWorkshopSwiss(List<Player> participants)
         {
             throw new NotImplementedException();
         }

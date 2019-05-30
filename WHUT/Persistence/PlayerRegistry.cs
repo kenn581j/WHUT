@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WHUT.Business;
+using WHUT.Application;
 using WHUT.Domain;
 using System.Xml;
 

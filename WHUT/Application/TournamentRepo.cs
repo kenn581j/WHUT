@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WHUT.Domain;
+using WHUT.Persistence;
 
-namespace WHUT.Business
+namespace WHUT.Application
 {
     public class TournamentRepo
     {
@@ -44,13 +45,13 @@ namespace WHUT.Business
                     sortParticipants = ruleset.Swiss(participants);
                     break;
                 case "Games Workshop Swiss":
-                    sortParticipants = ruleset.GameWorkShopSwiss(participants);
+                    sortParticipants = ruleset.GamesWorkshopSwiss(participants);
                     break;
                 case "Single Elimination":
                     sortParticipants = ruleset.SingleElimination(participants);
                     break;
                 case "Double Elimination":
-                    sortParticipants = ruleset.DoubleElimination(participants);
+                    //sortParticipants = ruleset.DoubleElimination(participants);
                     break;
                 case "Round Robin":
                     sortParticipants = ruleset.RoundRobin(participants);

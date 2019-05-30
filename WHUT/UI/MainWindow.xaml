@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WHUT.UI"
         mc:Ignorable="d"
-        Title="Warhammer Underworld Tournament System" WindowState="Maximized" WindowStyle="ToolWindow">
+        Title="Warhammer Underworld Tournament System" WindowState="Maximized" WindowStyle="SingleBorderWindow">
     <Grid Background="GhostWhite">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.2*" />
