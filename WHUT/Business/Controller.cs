@@ -11,22 +11,25 @@ namespace WHUT.Business
 {
     class Controller
     {
-        private TournamentRegistry tournamentRegistry = new TournamentRegistry();
-        private PlayerRegistry playerRegistry = new PlayerRegistry();
-        private PlayerRepo playerRepo = new PlayerRepo();
+        private TournamentRegistry tournamentRegistry;
+        private PlayerRegistry playerRegistry;
+        private PlayerRepo playerRepo;
 
-        public string TournamentName { get; set; }
-
-        public XDocument LoadTournament(string tournamentName)
+        public bool LoadTournament(string tournamentName)
         {
-            XDocument tournamentLoaded = tournamentRegistry.LoadTournament(tournamentName);
+            bool result;
+            tournamentRegistry = new TournamentRegistry();
+            Tournament tournamentLoaded = tournamentRegistry.LoadTournament(tournamentName);
             
-            return tournamentLoaded;
-        }
-
-        public override string ToString()
-        {
-            return $"{TournamentName}";
+            if (tournamentLoaded != null)
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
+            return result;
         }
     }
 }

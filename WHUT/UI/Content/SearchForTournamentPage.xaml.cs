@@ -30,13 +30,16 @@ namespace WHUT.UI.Content
         private void LoadTournament_Click(object sender, RoutedEventArgs e)
         {
             Controller controller = new Controller();
-            XDocument showTournament = controller.LoadTournament(tournamentName.Text);
+            bool tournament = controller.LoadTournament(tournamentName.Text);
             
-            if (showTournament != null)
+            if (tournament == true)
             {
-                NavigationService.Navigate(new TournamentPage(tournamentName.Text));
+                NavigationService.Navigate(new TournamentPage());
             }
-            else MessageBox.Show("Tournament: " + tournamentName.Text + ", was not found.");
+            else
+            {
+                MessageBox.Show("Tournament: " + tournamentName.Text + ", was not found.");
+            }   
         }
     }
 }

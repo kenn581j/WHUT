@@ -8,8 +8,8 @@
         Title="Warhammer Underworld Tournament System" WindowState="Maximized" WindowStyle="ToolWindow">
     <Grid Background="GhostWhite">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="7*" />
+            <ColumnDefinition Width="1.2*" />
+            <ColumnDefinition Width="6*" />
             <ColumnDefinition Width="10" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -49,7 +49,7 @@
         </StackPanel>
         
         <StackPanel Name="SelectedTournamentMenu" Grid.Column="0" Grid.Row="1" Margin="10, 200, 10, 10"
-                    Width="190" MaxHeight="150" VerticalAlignment="Top" HorizontalAlignment="Right"
+                    Width="190" MaxHeight="200" VerticalAlignment="Top" HorizontalAlignment="Right"
                     Background="LightBlue">
             <Button Name="ChooseRuleset" Content="Choose Ruleset" Click="ChooseRuleset_Click"
                         HorizontalContentAlignment="Left"  FontFamily="Verdana" FontSize="16" Background="LightBlue"

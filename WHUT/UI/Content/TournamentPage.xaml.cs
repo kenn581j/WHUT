@@ -22,13 +22,9 @@ namespace WHUT.UI.Content
     /// </summary>
     public partial class TournamentPage : Page
     {
-        public TournamentPage(string tournamentName)
+        public TournamentPage()
         {
             InitializeComponent();
-            showTournamentName.Text = tournamentName;
-            Controller controller = new Controller();
-
-            showTournamentLocation.Text = controller.ToString();
         }
 
 

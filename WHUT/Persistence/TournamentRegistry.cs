@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
 using System.Xml.Linq;
 using WHUT.Domain;
 
@@ -12,13 +7,20 @@ namespace WHUT.Business
 {
     public class TournamentRegistry
     {
-        private string path = @"C:\Tournaments\";
+        private string path = @"C:\WHUT\Tournaments\";
 
         private void CheckForDirectory()
         {
             if (Directory.Exists(path) == false)
             {
-                DirectoryInfo tournamentsFolder = Directory.CreateDirectory(path);
+                try
+                {
+                    DirectoryInfo tournamentsFolder = Directory.CreateDirectory(path);
+                }
+                catch (DiscAccesDeniedException eMessage)
+                {
+                    throw new DiscAccesDeniedException(@"Disc access denied", eMessage);
+                }
             }
         }
         public void SaveTournament(Tournament tournament)
@@ -37,18 +39,39 @@ namespace WHUT.Business
             saveTournament.Save(path + tournament.Name + ".xml");
         }
 
-        public XDocument LoadTournament(string tournament)
+        public Tournament LoadTournament(string tournamentName)
         {
             XDocument doc;
             try
             {
-                doc = XDocument.Load(path + tournament + ".xml");
+                doc = XDocument.Load(path + tournamentName + ".xml");
             }
             catch
             {
                 doc = null;
             }
-            return doc;
+
+            Tournament tournament = new Tournament(doc.Element("Name").ToString(), doc.Element("Location").ToString(), DateTime.Parse(doc.Element("Date").ToString()));
+            
+            return tournament;
+        }
+
+        public class DiscAccesDeniedException : Exception
+        {
+            public DiscAccesDeniedException()
+            {
+
+            }
+
+            public DiscAccesDeniedException(string eMessage) : base(eMessage)
+            {
+
+            }
+
+            public DiscAccesDeniedException(string eMessage, Exception inner) : base(eMessage, inner)
+            {
+
+            }
         }
     }
 }
