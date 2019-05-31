@@ -23,7 +23,19 @@
             <TextBlock Text="" Name="tournamentName"/>
             <TextBlock Text="" Name="tournamentLocation"/>
             <TextBlock Text="" Name="tournamentDate"/>
+            <TextBlock Text="{Binding}" Name="tournamentRuleset"/>
         </StackPanel>
-        <ListView Name="Participants" Grid.Column="0" Grid.Row="1"/>
+        <ListView Name="Participants" Grid.Column="1" Grid.Row="0"/>
+
+        <ComboBox VerticalAlignment="Top" Margin="10" Height="20" Grid.Column="0" Grid.Row="1" Text="Select Ruleset" Name="SelectRuleSet">
+            <ComboBoxItem Name="singleEli" Selected="SingleEli_Selected">Single Elimination</ComboBoxItem>
+            <ComboBoxItem Name="doubleEli" Selected="DoubleEli_Selected">Double Elimination</ComboBoxItem>
+            <ComboBoxItem Name="Swiss" Selected="Swiss_Selected">Monrad Swiss</ComboBoxItem>
+            <ComboBoxItem Name="gwSwiss" Selected="GwSwiss_Selected">Games Workshop Swiss</ComboBoxItem>
+            <ComboBoxItem Name="roundRobin" Selected="RoundRobin_Selected">Round Robin</ComboBoxItem>
+        </ComboBox>
+        <Button Grid.Column="2" Grid.Row="2" Name="StartNewRound_Button" Content="Start New Round" Click="StartNewRound_Button_Click"/>
+
+        <ListView Grid.Row="1" Grid.Column="1" Name="Matches"/>
     </Grid>
 </Page>

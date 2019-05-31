@@ -29,7 +29,7 @@ namespace WHUT.Application
                 newRound.AddMatch(match);
             }
 
-            AddRound(tournament, newRound);
+            tournament.rounds.Add(newRound);
         }
 
         private List<Player> SortParticipants(string tournamentType, List<Player> participants)
@@ -59,10 +59,6 @@ namespace WHUT.Application
             }
 
             return sortParticipants;
-        }
-        private void AddRound(Tournament tournament, Round round)
-        {
-            tournament.rounds.Add(round);
         }
     }
 }

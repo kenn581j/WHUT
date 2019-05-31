@@ -31,6 +31,12 @@ namespace WHUT.Application
             SaveTournament(tournament);
         }
 
+        public void NewRound()
+        {
+            TournamentRepo tournamentRepo = new TournamentRepo();
+            tournamentRepo.NewRound(tournament);
+        }
+
         public bool LoadTournament(string tournamentName)
         {
             TournamentRegistry tournamentRegistry = new TournamentRegistry();

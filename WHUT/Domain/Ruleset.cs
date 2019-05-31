@@ -113,11 +113,14 @@ namespace WHUT.Domain
         {
             List<Player> playersShuffled = new List<Player>();
             Random rand = new Random();
+            int loopDuration = players.Count; 
 
-            for (int i = 0; i < players.Count; i++)
+            for (int i = 0; i < loopDuration; i++)
             {
-                int nextIndex = rand.Next(players.Count + 1);
+                int nextIndex = rand.Next(players.Count);
                 playersShuffled.Add(players[nextIndex]);
+                players.RemoveAt(nextIndex);
+
             }
 
             return playersShuffled;
