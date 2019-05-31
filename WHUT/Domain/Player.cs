@@ -26,17 +26,27 @@ namespace WHUT.Domain
         }
 
         //Pt indeholder konstruktør score og tiebreakers pga. stub listen
-        public Player(string name, string club, string warband,int losses, int score, int tieBreakerByLoss, int tieBreakerGloryDiff)
+        public Player(string name, string club, string warband, int score, int tieBreakerByLoss, int tieBreakerGloryDiff)
+        {
+            Name = name;
+            Club = club;
+            Warband = warband;
+            Score = score;
+            TiebreakerLoss = tieBreakerByLoss;
+            TiebreakerGloryDiff = tieBreakerGloryDiff;  
+        }
+
+        public Player(string name, string club, string warband, int score, int losses)
         {
             Name = name;
             Club = club;
             Warband = warband;
             Losses = losses;
             Score = score;
-            TiebreakerLoss = tieBreakerByLoss;
-            TiebreakerGloryDiff = tieBreakerGloryDiff;  
         }
         
+
+
 
         public override string ToString()
         {

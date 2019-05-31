@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using WHUT.Persistence;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WHUT.Domain;
-using WHUT.Business;
+using WHUT.Application;
 
 namespace WHUTTestProject
 { 
