@@ -36,7 +36,7 @@ namespace WHUTTestProject
         public void TournamentSaveLoadTest()
         {
             tournamentRegistry.SaveTournament(tournament);
-            reloadedTournament = tournamentRegistry.LoadTournament("Testing");
+            Tournament reloadedTournament = tournamentRegistry.LoadTournament("Testing");
 
             Assert.AreEqual(tournament, reloadedTournament);
         }

@@ -27,8 +27,7 @@ namespace WHUT.UI.Content
         }
         private void LoadTournament_Click(object sender, RoutedEventArgs e)
         {
-            Controller controller = new Controller();
-            bool tournament = controller.LoadTournament(tournamentName.Text);
+            bool tournament = Controller.Instance.LoadTournament(tournamentName.Text);
 
             if (tournament == true)
             {

@@ -37,13 +37,10 @@
             <Button Name="NewTournament_Button" Content="New Tournament" Click="NewTournament_Button_Click" 
                     HorizontalContentAlignment="Left"  FontFamily="Verdana" FontSize="16" Background="LightBlue"
                     Margin="1,1,1,1"/>
-            <Button Name="CreatePlayer_Button" Content="Create Player" Click="CreatePlayer_Butoon_Click" 
+            <Button Name="Load_Button" Content="Load Tournament" Click="LoadTournament_Button_Click" 
                     HorizontalContentAlignment="Left"  FontFamily="Verdana" FontSize="16" Background="LightBlue"
                     Margin="1,1,1,1"/>
-            <Button Name="RenameTournament_Button" Content="Rename Tournament" Click="RenameTournament_Button_Click" 
-                    HorizontalContentAlignment="Left"  FontFamily="Verdana" FontSize="16" Background="LightBlue"
-                    Margin="1,1,1,1"/>
-            <Button Name="BeginTournament_Button" Content="Begin a Tournament" Click="BeginTournament_Button_Click" 
+            <Button Name="CreatePlayer_Button" Content="New Player" Click="CreatePlayer_Butoon_Click" 
                     HorizontalContentAlignment="Left"  FontFamily="Verdana" FontSize="16" Background="LightBlue"
                     Margin="1,1,1,1"/>
         </StackPanel>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WHUT.Application;
 
 namespace WHUT.UI.Content
 {
@@ -23,6 +24,10 @@ namespace WHUT.UI.Content
         public TournamentPage()
         {
             InitializeComponent();
+            tournamentName.Text = Controller.Instance.tournament.Name;
+            tournamentLocation.Text = Controller.Instance.tournament.Location;
+            tournamentDate.Text = Controller.Instance.tournament.Date.ToString();
+            Participants.Items.Add(Controller.Instance.tournament.Participants);
         }
     }
 }

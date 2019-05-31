@@ -26,30 +26,19 @@ namespace WHUT.UI.Content
             InitializeComponent();
         }
 
-        private void SaveTournament_Click(object sender, RoutedEventArgs e)
+        private void StartTournament_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(tournamentName.Text))
-                MessageBox.Show("Please provide a name for the tournament.");
-            if (string.IsNullOrWhiteSpace(tournamentName.Text))
-                MessageBox.Show("You can't have blank spaces in the tournament name, just yet..");
-
-            if (!string.IsNullOrEmpty(tournamentName.Text) && !string.IsNullOrWhiteSpace(tournamentName.Text))
+            if(!string.IsNullOrEmpty(tournamentName.Text))
             {
-                try
-                {
-                    TournamentRepo tournamentRepo = new TournamentRepo();
-                    tournamentRepo.NewTournament(tournamentName.Text, location.Text, date.DisplayDate);
-                }
-                catch
-                {
-                    MessageBox.Show("Something went wrong, try again. This is under development. Name has to be string, location has to be string and you have to use the dropdown calender to pick a date.");
-                }
-                finally
-                {
-                    MessageBox.Show("Tournament: " + " '" + tournamentName.Text + "' " + ", at location " + " '" + location.Text + "' " + " was created for " + date.DisplayDate);
-                    this.NavigationService.Navigate(new FrontPage());
-                    this.NavigationService.RemoveBackEntry();
-                }
+                Controller.Instance.CreateTournament(tournamentName.Text, location.Text, date.DisplayDate);
+
+                MessageBox.Show($"Tournament: {tournamentName.Text}, at location {location.Text} was created for {date.DisplayDate}");
+                this.NavigationService.Navigate(new TournamentPage());
+                this.NavigationService.RemoveBackEntry();
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong, try again. This is under development.");
             }
         }
     }

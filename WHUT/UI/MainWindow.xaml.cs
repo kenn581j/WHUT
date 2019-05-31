@@ -35,12 +35,8 @@ namespace WHUT.UI
             ContentFrame.NavigationService.Navigate(new Content.CreatePlayer());
         }
 
-        private void RenameTournament_Button_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
-
-        private void BeginTournament_Button_Click(object sender, RoutedEventArgs e)
+        private void LoadTournament_Button_Click(object sender, RoutedEventArgs e)
         {
             ContentFrame.NavigationService.Navigate(new Content.SearchForTournamentPage());
         }
