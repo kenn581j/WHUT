@@ -69,7 +69,7 @@ namespace WHUT.UI.Content
 
         private void Matches_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
-            RegisterMatchResult inputMatchResults = new RegisterMatchResult());
+            RegisterMatchResult inputMatchResults = new RegisterMatchResult();
             inputMatchResults.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             inputMatchResults.Show();
 

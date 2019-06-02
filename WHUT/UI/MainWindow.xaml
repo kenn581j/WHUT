@@ -44,29 +44,6 @@
                     HorizontalContentAlignment="Left"  FontFamily="Verdana" FontSize="16" Background="LightBlue"
                     Margin="1,1,1,1"/>
         </StackPanel>
-
-        <StackPanel Name="SelectedTournamentMenu" Grid.Column="0" Grid.Row="1" Margin="10, 200, 10, 10"
-                    Width="190" MaxHeight="200" VerticalAlignment="Top" HorizontalAlignment="Right"
-                    Background="LightBlue">
-            <Button Name="ChooseRuleset" Content="Choose Ruleset" Click="ChooseRuleset_Click"
-                        HorizontalContentAlignment="Left"  FontFamily="Verdana" FontSize="16" Background="LightBlue"
-                    Margin="1,1,1,1"/>
-            <Button Name="StartNewRound_Button" Content="Start a New Round" Click="StartNewRound_Button_Click"
-                        HorizontalContentAlignment="Left"  FontFamily="Verdana" FontSize="16" Background="LightBlue"
-                    Margin="1,1,1,1"/>
-            <Button Name="RegisterMatchResults" Content="Register Match Results" Click="RegisterMatchResults_Click_1"
-                        HorizontalContentAlignment="Left"  FontFamily="Verdana" FontSize="16" Background="LightBlue"
-                    Margin="1,1,1,1"/>
-            <Button Name="DrawNewParrings" Content="Draw New Parrings" Click="DrawNewParrings_Click" 
-                        HorizontalContentAlignment="Left"  FontFamily="Verdana" FontSize="16" Background="LightBlue"
-                    Margin="1,1,1,1"/>
-            <Button Name="ManuallyChangeMatch" Content="Change a Match" Click="ManuallyChangeMatch_Click"
-                        HorizontalContentAlignment="Left"  FontFamily="Verdana" FontSize="16" Background="LightBlue"
-                    Margin="1,1,1,1"/>
-            <Button Name="ShowScore" Content="Show Score" Click="ShowScore_Click"
-                        HorizontalContentAlignment="Left"  FontFamily="Verdana" FontSize="16" Background="LightBlue"
-                    Margin="1,1,1,1"/>
-        </StackPanel>
         <Frame Name="ContentFrame" Grid.Column="1" Grid.Row="1"
                Margin="10, 10, 10, 10" 
                NavigationUIVisibility="Hidden"/>
