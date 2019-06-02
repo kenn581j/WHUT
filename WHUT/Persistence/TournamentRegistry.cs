@@ -55,7 +55,7 @@ namespace WHUT.Persistence
             {
                 doc = null;
             }
-            //FIX DET HER JIMMY
+
             IEnumerable<string> tName =
                 from i in doc.Descendants("Name")
                 select (string)i;

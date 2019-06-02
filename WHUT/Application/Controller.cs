@@ -8,16 +8,39 @@ using WHUT.Persistence;
 
 namespace WHUT.Application
 {
-    public class Controller
+    public sealed class Controller
     {
-        private TournamentRegistry tournamentRegistry;
-        private PlayerRegistry playerRegistry;
-        private PlayerRepo playerRepo;
+        private static readonly Controller singletonController = new Controller();
+        public Tournament tournament; //Later development will ensure the object cannot be overwritten
+
+        public static Controller Instance
+        {
+            get { return singletonController; }
+        }
+        private Controller ()
+        {
+        }
+        static Controller() // has a static constructor, so it executes only once
+        {
+        }
+
+        public void CreateTournament(string tournamentName, string location, DateTime date)
+        {
+            TournamentRepo tournamentRepo = new TournamentRepo();
+            tournament = tournamentRepo.NewTournament(tournamentName, location, date);
+            SaveTournament(tournament);
+        }
+
+        public void NewRound()
+        {
+            TournamentRepo tournamentRepo = new TournamentRepo();
+            tournamentRepo.NewRound(tournament);
+        }
 
         public bool LoadTournament(string tournamentName)
         {
+            TournamentRegistry tournamentRegistry = new TournamentRegistry();
             bool result;
-            tournamentRegistry = new TournamentRegistry();
             Tournament tournamentLoaded = tournamentRegistry.LoadTournament(tournamentName);
 
             if (tournamentLoaded != null)
@@ -29,6 +52,12 @@ namespace WHUT.Application
                 result = false;
             }
             return result;
+        }
+
+        public void SaveTournament(Tournament tournament)
+        {
+            TournamentRegistry tournamentRegistry = new TournamentRegistry();
+            tournamentRegistry.SaveTournament(tournament);
         }
     }
 }

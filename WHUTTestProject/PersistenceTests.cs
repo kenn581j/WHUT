@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using WHUT.Persistence;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WHUT.Domain;
-using WHUT.Business;
+using WHUT.Application;
 
 namespace WHUTTestProject
 { 
@@ -36,7 +36,7 @@ namespace WHUTTestProject
         public void TournamentSaveLoadTest()
         {
             tournamentRegistry.SaveTournament(tournament);
-            reloadedTournament = tournamentRegistry.LoadTournament("Testing");
+            Tournament reloadedTournament = tournamentRegistry.LoadTournament("Testing");
 
             Assert.AreEqual(tournament, reloadedTournament);
         }

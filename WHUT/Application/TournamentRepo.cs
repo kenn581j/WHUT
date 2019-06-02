@@ -10,16 +10,12 @@ namespace WHUT.Application
 {
     public class TournamentRepo
     {
-        private Tournament tournament;
-        private TournamentRegistry tournamentRegistry = new TournamentRegistry();
-
-        public void NewTournament(string name, string location, DateTime date)
+        public Tournament NewTournament(string name, string location, DateTime date)
         {
-            tournament = new Tournament(name, location, date);
-            tournamentRegistry.SaveTournament(tournament);
+            return new Tournament(name, location, date); ;
         }
       
-        public void NewRound()
+        public void NewRound(Tournament tournament)
         {
             List<Player> participants = SortParticipants(tournament.TournamentType, tournament.Participants);
 
@@ -33,9 +29,10 @@ namespace WHUT.Application
                 newRound.AddMatch(match);
             }
 
-            AddRound(newRound);
+            tournament.rounds.Add(newRound);
         }
-        public List<Player> SortParticipants(string tournamentType, List<Player> participants)
+
+        private List<Player> SortParticipants(string tournamentType, List<Player> participants)
         {
             List<Player> sortParticipants = new List<Player>();
             Ruleset ruleset = new Ruleset();
@@ -62,10 +59,6 @@ namespace WHUT.Application
             }
 
             return sortParticipants;
-        }
-        public void AddRound(Round round)
-        {
-            tournament.rounds.Add(round);
         }
     }
 }

@@ -16,17 +16,26 @@ namespace WHUT.Domain
         public int Losses { get; set; }
         public int TiebreakerLoss {get; set;}
         public int TiebreakerGloryDiff {get; set;}
+        
 
+        public Player(string name) : this(name, "No club")
+        {
+            
+        }
+        public Player(string name, string club) : this (name, club, "No warband selected")
+        {
+            
+        }
         public Player(string name, string club, string warband)
         {
             Name = name;
             Club = club;
             Warband = warband;
-
         }
 
+
         //Pt indeholder konstruktør score og tiebreakers pga. stub listen
-        public Player(string name, string club, string warband,int losses, int score, int tieBreakerByLoss, int tieBreakerGloryDiff)
+        public Player(string name, string club, string warband, int losses , int score, int tieBreakerByLoss, int tieBreakerGloryDiff)
         {
             Name = name;
             Club = club;
@@ -34,14 +43,12 @@ namespace WHUT.Domain
             Losses = losses;
             Score = score;
             TiebreakerLoss = tieBreakerByLoss;
-            TiebreakerGloryDiff = tieBreakerGloryDiff;  
+            TiebreakerGloryDiff = tieBreakerGloryDiff;
         }
-        
 
         public override string ToString()
         {
             return $"{Name} {Club} {Warband}";
-            //Så behøver du ikke at lave en lang streng :> 
         }
 
     }

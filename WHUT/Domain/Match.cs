@@ -17,5 +17,10 @@ namespace WHUT.Domain
             FirstPlayer = firstPlayer;
             SecondPlayer = secondPlayer;
         }
+
+        public override string ToString()
+        {
+            return $"{FirstPlayer} Versus {SecondPlayer}";
+        }
     }
 }

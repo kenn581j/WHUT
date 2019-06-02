@@ -15,8 +15,8 @@
         <TextBox Name="location"/>
         <TextBlock Text="Date: "/>
         <DatePicker Name="date" FirstDayOfWeek="Monday" IsDropDownOpen="False"/>
-        <Button Name="saveTournament" Content="Save Tournament" 
-                Click="SaveTournament_Click"
+        <Button Name="startTournament" Content="Start Tournament" 
+                Click="StartTournament_Click"
                 Margin="150, 20, 10, 0"/>
     </StackPanel>
 </Page>
