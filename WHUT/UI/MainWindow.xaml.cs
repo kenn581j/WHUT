@@ -40,34 +40,5 @@ namespace WHUT.UI
         {
             ContentFrame.NavigationService.Navigate(new Content.SearchForTournamentPage());
         }
-        private void ChooseRuleset_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void StartNewRound_Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void RegisterMatchResults_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DrawNewParrings_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ManuallyChangeMatch_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ShowScore_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

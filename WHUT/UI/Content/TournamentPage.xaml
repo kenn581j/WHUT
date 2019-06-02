@@ -36,6 +36,6 @@
         </ComboBox>
         <Button Grid.Column="2" Grid.Row="2" Name="StartNewRound_Button" Content="Start New Round" Click="StartNewRound_Button_Click"/>
 
-        <ListView Grid.Row="1" Grid.Column="1" Name="Matches"/>
+        <ListView Grid.Row="1" Grid.Column="1" Name="Matches" MouseRightButtonUp="Matches_MouseRightButtonUp"/>
     </Grid>
 </Page>

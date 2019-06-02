@@ -72,13 +72,15 @@ namespace WHUT.Domain
             }
             else
             {
-                players = players.OrderByDescending(x => x.Score).ThenByDescending(x => x.TiebreakerLoss).ThenByDescending(x => x.TiebreakerGloryDiff).ToList(); // Sorting the list with LINQ methods to pair players according to Swiss rules
+                // Sorting the list with LINQ methods to pair players according to Swiss rules
+                players = players.OrderByDescending(x => x.Score).ThenByDescending
+                    (x => x.TiebreakerLoss).ThenByDescending(x => x.TiebreakerGloryDiff).ToList(); 
             }
 
             return players;
         }
 
-        internal List<Player> GamesWorkshopSwiss(List<Player> participants)
+        public List<Player> GamesWorkshopSwiss(List<Player> participants)
         {
             throw new NotImplementedException();
         }

@@ -30,17 +30,11 @@ namespace WHUT.UI.Content
             tournamentRuleset.Text = Controller.Instance.tournament.TournamentType;
             Controller.Instance.tournament.Participants.ForEach(x => Participants.Items.Add(x));
         }
-        
-        //string selectedItem = Matches.Items[Matches.SelectedIndex].ToString();
-        //MessageBox.Show(selectedItem);
 
         private void StartNewRound_Button_Click(object sender, RoutedEventArgs e)
         {
             Controller.Instance.NewRound();
             Controller.Instance.tournament.rounds[0].matches.ForEach(x => Matches.Items.Add(x));
-
-            
-
         }
 
         private void SingleEli_Selected(object sender, RoutedEventArgs e)
@@ -71,6 +65,14 @@ namespace WHUT.UI.Content
         {
             Controller.Instance.tournament.TournamentType = "Monrad Swiss";
             tournamentRuleset.Text = Controller.Instance.tournament.TournamentType;
+        }
+
+        private void Matches_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            RegisterMatchResult inputMatchResults = new RegisterMatchResult());
+            inputMatchResults.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            inputMatchResults.Show();
+
         }
     }
 }
